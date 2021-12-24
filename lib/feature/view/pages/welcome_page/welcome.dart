@@ -1,0 +1,25 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:flutter/material.dart';
+import 'package:meditation_app/core/constants/theme/app_colors.dart';
+import 'package:meditation_app/core/utils/screen_size.dart';
+import 'package:meditation_app/feature/view/pages/welcome_page/welcome_body.dart';
+
+class Welcome extends StatelessWidget {
+  const Welcome({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    ScreenSize().screenSize = MediaQuery.of(context).size;
+
+    return Scaffold(
+      backgroundColor: AppColors.purpleButtonColor,
+      appBar: AppBar(
+        backgroundColor: AppColors.whiteColor,
+        elevation: 0,
+        toolbarHeight: 0,
+      ),
+      body:  WelcomeBody(),
+    );
+  }
+}
